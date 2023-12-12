@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Postagens</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="postagem">
+    <div class="header">
+        <div class="nav justify-content-center">
+            <span>N O T I O N</span>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="perfil">
+            <a href="/usuario-conteudo" class="usuario-conteudo"><h1 th:text="${nome}" >Esse texto vai vir do java</h1></a>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac erat accumsan, aliquam leo at, vestibulum nisl. Vivamus luctus malesuada erat, vel maximus lorem ornare vitae.</p>
+        </div>
+
+        <div class="meio">
+
+            <form method="post" th:action="@{/nova-postagem}" th:object="${postagem}">
+                <div class="enviar">
+                    <div class="input-color">
+                        <label class="form-label">O que está acontecendo?</label>
+                        <input type="text" th:field="*{conteudo}" class="form-control conteudo-enviar"/>
+                    </div>
+                </div>
+                <div class="botoes">
+                    <div class="mb-3 ">
+                        <a href="/postagens-data" class="btn btn-success button-acao href">Filtrar</a>
+                    </div>
+
+                    <div class="mb-3 button-acao">
+                        <button type="submit" class="btn btn-success button-acao">Enviar</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="conteudo" th:each="p : ${postagens}">
+                <div class="conteudo-individual">
+                    <p th:text="${p.getUsuario()}"></p>
+                    <p th:text="${p.getConteudo()}"></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="aside">
+            <h1>Noticias</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet lectus metus, sed vulputate urna finibus aliquam. Curabitur ac dictum nibh.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
