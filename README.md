@@ -1,5 +1,5 @@
 # rede-social
-Projeto criado na disciplina de Programação Orientada a Objetos Avançado, utilizando o framework SpringBoot.
+Projeto criado para as disciplinas de Serviços Web com Rest e POO com Banco de Dados, utilizando o framework SpringBoot.
 
 Módulos utilizados: 
 - Spring Web
@@ -8,7 +8,7 @@ Módulos utilizados:
 
 - H2 Database
 
-- Thymeleaf
+- Thymeleaf e CSS
 
 - Spring Boot DevTools
 
